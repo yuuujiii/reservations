@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PoteShare</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <div class="header_left">
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/" %>
+        <input class="header_input" type="text" placeholder= "&#xf041; エリア" >
+        <input class="header_input" type="text" placeholder= "&#xf002; キーワード" >
+      </div>
+      <% unless logged_in? %>
+      <div class="header_right">
+        <%= link_to "ログイン" , sign_in_form_path %>
+        <%= link_to "登録する" , new_user_path %>
+      </div>
+      <% else %>
+      <div class="header_right">
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com…56fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" alt="ユーザー画像">
+        <ul>
+          <li><%= link_to "ルーム登録", root_path %></li>
+          <li><%= link_to "予約済みルーム一覧", root_path %></li>
+          <li><%= link_to "登録済みルーム一覧", root_path %></li>
+          <li><%= link_to "設定", root_path %></li>
+          <li><%= link_to "ログアウト", log_out_path , method: :post %></li>
+        </ul>
+      </div>  
+      <% end %>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<% if flash[:now] %>
+  <%= flash[:now] %>
+<% end %>
+<div class="sign_in_container">
+  <p>ログイン</p>
+  <%= form_with url:sign_in_path do |form| %>  
+    <span>必須</span>
+    <%= form.text_field :email , placeholder:"メールアドレス"%>
+    <span>必須</span>
+    <%= form.password_field :password , placeholder:"パスワード"%>
+    <%= form.submit "ログイン" %>
+  <% end %>
+  <%= link_to "新しいアカウントを作成", new_user_path %>
+</div>
