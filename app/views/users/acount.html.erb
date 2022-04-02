@@ -1,0 +1,26 @@
+<article>
+  <div class="tab">
+    <ul>
+      <li>
+        <%= link_to "アカウント", users_acount_path %>
+        <%= link_to "プロフィール", users_profile_path %>
+      </li>
+    </ul>
+  </div>
+  <div class="back_ground">
+    <div class="acount">
+      <h3 class="acount_content">アカウント</h3>
+      <div class="acount_content">
+        <div class="acount_content_left">メールアドレス</div>
+        <div class="acount_content_right"><%= @user.email %></div>
+      </div>
+      <div class="acount_content">
+        <div class="acount_content_left">パスワード</div>
+        <div class="acount_content_right"><%= @user.password %></div>
+      </div>
+      <div class="acount_content">
+        <%= link_to "編集", edit_user_path(@user) %>
+      </div>
+    </div>
+  </div>
+</article>

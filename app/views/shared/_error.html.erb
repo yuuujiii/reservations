@@ -1,0 +1,10 @@
+<% if obj.errors.any? %>
+  <p class="error">入力にエラーがあります</p>
+  <% obj.errors.full_messages.each do |message| %>
+    <div class="error_container">
+      <ul>
+        <li><%= message %></li>
+     </ul>
+    </div>
+  <% end %>
+<% end %>

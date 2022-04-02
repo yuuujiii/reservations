@@ -1,0 +1,22 @@
+<div class="user_edit_container">
+  <div class="user_edit_form">
+    <h3>アカウント編集</h3>
+    <%= form_with model:@user,local: true do |f| %>
+    <%= render "shared/error", obj:f.object%>
+      <div class="user_edit_content">
+        <%= f.label:email, "メールアドレス" %>
+        <%= f.text_field :email, value:@user.email %>
+      </div>
+      <div class="user_edit_content">
+        <%= f.label :password,"変更後パスワード（変更する場合のみ入力）"  %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="user_edit_content">
+        <%= f.label:password_confirmation, "パスワード確認用（変更する場合のみ入力）" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <%= f.submit "更新" %>
+      <%= link_to "戻る", users_acount_path %>
+    <% end %>
+  </div>
+</div>

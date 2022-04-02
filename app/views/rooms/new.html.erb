@@ -1,0 +1,59 @@
+<div class = "new_room_form">
+  <div class="new_room_conteiner">
+    <div class = "new_room_content">
+      <h3>ルーム情報登録</h3>
+    </div>
+    <%= form_with model:@room do |f| %>
+    <%= render "shared/error", obj:f.object%>
+      <div class = "new_room_content">
+        <div class="new_room_content_left">
+          <%= f.label :name , "ルーム名" %>
+          <span>必須</span>
+        </div>
+        <div class="new_room_content_right">
+          <%= f.text_field :name , placeholder:"ルーム名を入力"%>
+        </div>
+      </div>
+      <div class = "new_room_content">
+        <div class="new_room_content_left">
+          <%= f.label :introduction , "ルーム紹介" %>
+          <span>必須</span>
+        </div>
+        <div class="new_room_content_right">   
+          <%= f.text_area :introduction , placeholder:"ルーム説明を入力"%>
+        </div>
+      </div>
+      <div class = "new_room_content">
+        <div class="new_room_content_left">
+          <%= f.label :price , "料金" %>
+          <span>必須</span>
+        </div>
+        <div class="new_room_content_right">   
+          <%= f.text_field :price , placeholder:"1日あたりの料金を入力"%>
+        </div>
+      </div>
+      <div class = "new_room_content">
+        <div class="new_room_content_left">
+          <%= f.label :address , "住所" %>
+          <span>必須</span>
+        </div>
+        <div class="new_room_content_right">
+        <%= f.text_field :address , placeholder:"住所を入力"%>
+        </div>
+      </div>
+      <div class = "new_room_content">
+        <div class="new_room_content_left">
+          <%= f.label :image , "画像" %>
+          <span>必須</span>
+        </div>
+        <div class="new_room_content_right">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+      <div class = "new_room_content">
+        <%= f.hidden_field :user_id ,:value => session[:user_id] %>
+        <%= f.submit "登録" %>
+      </div>
+    <% end %>
+  </div>
+</div>

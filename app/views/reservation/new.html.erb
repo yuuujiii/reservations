@@ -1,0 +1,29 @@
+<div class="reservation_new_container">
+  <div class="reservation_new_form">
+    <h3>予約内容確認</h3> 
+    <h4>
+      <%= "¥" %>
+      <%= @room.price %>
+      <%= "/日" %>
+    </h4>
+    <%= form_with model:@reservation, url:reservation_index_path, method: :post do |f| %>
+      <%= f.label :start_date , "開始日" %>
+      <%= @reservation.start_date %>
+      <%= f.hidden_field :start_date %>
+      <%= f.label :end_date , "終了日" %>
+      <%= @reservation.end_date %>
+      <%= f.hidden_field :end_date %>
+      <p>使用日数:<%= @days %>日</p>
+      <p>人数:<%= @reservation.number_of_perple %>人</p>
+      <%= f.hidden_field :number_of_perple %>
+      <%= f.label :total_amount , "合計金額 ¥" %>
+      <%= @total_amount %>
+      <%= f.hidden_field :total_amount , :value => @total_amount%>
+      <%= f.hidden_field :room_id %>
+      <%= f.hidden_field :user_id %>
+      <p>上記内容でよろしければ「予約を確定」を押してください</p>
+      <%= f.submit "予約を確定する" %>
+      <%= link_to "ルーム詳細に戻る" , room_path(@room) %>
+    <% end %>
+  </div>
+</div>

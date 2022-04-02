@@ -1,0 +1,45 @@
+<div class="tab">
+  <ul>
+    <li>
+      <%= link_to "アカウント", users_acount_path %>
+      <%= link_to "プロフィール", users_profile_path %>
+    </li>
+  </ul>
+</div>
+<div class="back_ground">
+  <div class="profile">
+    <h4 class="profile_content">プロフィール</h4>
+    <div class="profile_content">
+      <%= image_tag @user.image.url %>
+    </div>
+    <%= form_with url:users_update_profile_path do |f| %>
+      <div class="profile_content">
+        <div class="profile_content_left">
+          <%= f.label :image, "アイコン画像" %><span>必須</span>
+        </div>
+        <div class="profile_content_right">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+      <div class="profile_content">
+        <div class="profile_content_left">
+          <%= f.label :name, "名前" %><span>必須</span>
+        </div>
+        <div class="profile_content_right">
+          <%= f.text_field :name, value:@user.name %>
+        </div>
+      </div>
+      <div class="profile_content">
+        <div class="profile_content_left">
+          <%= f.label :introduction, "自己紹介" %><span>必須</span>
+        </div>
+        <div class="profile_content_right">
+          <%= f.text_area :introduction, value:@user.introduction %>
+        </div>
+      </div>
+      <div class="profile_content">
+        <%= f.submit "更新" %>
+      </div>
+    <% end %>
+  </div>
+</div>

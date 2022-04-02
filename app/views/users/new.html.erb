@@ -1,18 +1,33 @@
-<div class="new_conteiner">
-  <p>新しいアカウントを作成</p>
-  
-  <%= form_with model:@user do |f| %>
-  <span>必須</span>
-  <%= f.text_field :name , placeholder:"ユーザー名" %>
-  <span>必須</span>
-  <%= f.text_field :email , placeholder:"メールアドレス" %>
-  <span>必須</span>
-  <%= f.password_field :password , placeholder:"パスワード" %>
-  <span>必須</span>
-  <%= f.password_field :password_confirmation , placeholder:"パスワード確認" %>
-  <%= f.submit "新しいアカウントを作成" %>
-  <% end %>
-
-  <%= link_to "既にお持ちの方はログイン" , "users/sign_in" %>
-
+<div class="new_user_conteiner">
+  <div class="new_user_form">
+    <p>新しいアカウントを作成</p>  
+    <%= form_with model:@user,local: true do |f| %>
+    <%= render "shared/error", obj: f.object %>
+    <div class="new_user_content">
+      <%= f.file_field :image %>
+    </div>  
+    <div class="new_user_content">
+      <span>必須</span>
+      <%= f.text_field :name , placeholder:"ユーザー名" %>
+    </div>  
+    <div class="new_user_content">  
+      <span>必須</span>
+      <%= f.text_field :email , placeholder:"メールアドレス" %>
+    </div>  
+    <div class="new_user_content">
+      <span>必須</span>
+      <%= f.password_field :password , placeholder:"パスワード" %>
+    </div>  
+    <div class="new_user_content">
+    <span>必須</span>
+    <%= f.password_field :password_confirmation , placeholder:"パスワード確認" %>
+    </div>  
+    <div class="new_user_content">
+      <%= f.submit "新しいアカウントを作成" %>
+    </div>
+    <% end %>
+    <div class="new_user_content">
+      <%= link_to "既にお持ちの方はログイン" , sign_in_form_path %>
+    </div>
+  </div>
 </div>

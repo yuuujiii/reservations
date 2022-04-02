@@ -1,0 +1,13 @@
+<h3 class="search_h3">検索結果: <%= @rooms.count %> 件</h3>
+  <div class="search_container">  
+  <% @rooms.each do |room| %>
+    <div class = "rooms_search">
+      <a href="<%= room_path(room)%>">
+        <%= image_tag room.image.url %>
+        <div class="room_search_name"><%= room.name %></div>
+        <div class="room_search_address"><%= room.address %></div>
+        <div class="room_search_price">¥<%= room.price %></div>
+      </a>  
+    </div>
+  <% end %>
+</div>

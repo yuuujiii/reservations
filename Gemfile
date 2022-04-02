@@ -6,6 +6,11 @@ ruby "3.1.1"
 gem 'pry-rails'
 gem 'bcrypt' , '3.1.16' 
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ransack' 
+gem 'importmap-rails'
+gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"

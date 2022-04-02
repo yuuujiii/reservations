@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -15,23 +15,35 @@
     <header>
       <div class="header_left">
         <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), "/" %>
-        <input class="header_input" type="text" placeholder= "&#xf041; エリア" >
-        <input class="header_input" type="text" placeholder= "&#xf002; キーワード" >
+        <%= form_with url:rooms_search_path, method: :get do |f| %>
+          <div class="font_position">
+            <%= f.text_field :area , placeholder:"エリア検索"%>
+            <span class="icon1"></span>
+          </div>
+          <div class="font_position">
+            <%= f.text_field :keyword , placeholder:"キーワード検索"%>
+            <span class="icon2"></span>
+          </div>
+          <%= f.submit %>
+        <% end %>
       </div>
       <% unless logged_in? %>
-      <div class="header_right">
-        <%= link_to "ログイン" , sign_in_form_path %>
-        <%= link_to "登録する" , new_user_path %>
-      </div>
+        <div class="login_header_right">
+          <%= link_to "ログイン" , sign_in_form_path %>
+          <%= link_to "登録する" , new_user_path %>
+        </div>
       <% else %>
       <div class="header_right">
-        <img src="https://presite-potepancamp-rails-02.herokuapp.com…56fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" alt="ユーザー画像">
+        <div class="header_right_name">
+          <%= @current_user.name %>
+        </div>
+        <%= image_tag @current_user.image.url%>
         <ul>
-          <li><%= link_to "ルーム登録", root_path %></li>
-          <li><%= link_to "予約済みルーム一覧", root_path %></li>
-          <li><%= link_to "登録済みルーム一覧", root_path %></li>
-          <li><%= link_to "設定", root_path %></li>
-          <li><%= link_to "ログアウト", log_out_path , method: :post %></li>
+          <li><%= link_to "ルーム登録", new_room_path %></li>
+          <li><%= link_to "予約済みルーム一覧", reservation_index_path %></li>
+          <li><%= link_to "登録済みルーム一覧", rooms_path %></li>
+          <li><%= link_to "設定", users_acount_path %></li>
+          <li><%= link_to "ログアウト", log_out_path, data: { turbo_method: :post } %></li>
         </ul>
       </div>  
       <% end %>
@@ -40,5 +52,24 @@
     <footer>
       <p>© 2020 POTEPAN.INC.</p>
     </footer>
+    <script>
+      /*global $*/
+      /*document $*/
+      $(document).ready(function(){
+        $(".header_right img").on("click",function(){
+          $(this).next().slideToggle(1);
+        });  
+        
+        $(".header_right ul li a").hover(function(){
+          $(this).css("color", "#333333");
+        },function(){
+          $(this).css("color", "");
+        });
+
+        $(".tab ul li").on("click",function(){
+          $(this).toggleClass("click");
+        });
+      });
+    </script>
   </body>
 </html>

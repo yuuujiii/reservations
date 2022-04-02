@@ -1,0 +1,56 @@
+<div class="flash_notice">
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+</div>
+<div class="room_show_top">
+  <div class="room_show_container">
+    <%= image_tag @room.image.url , size:"700x400" %>
+  </div>
+
+  <div class="reserve">
+    <div class="reserve_label">  
+      <%= "¥" %>
+      <%= @room.price %>
+      <%= "/日" %>
+    </div>
+    <%= form_with model:@reservation, url:new_reservation_path, method: :get do |f| %>
+    <%= render "shared/error", obj:f.object%>
+      <div class="reserve_label">
+        <%= f.label :start_date , "開始日" %>
+      </div> 
+      <div class="reserve_input">
+        <%= f.date_field :start_date %>
+      </div>
+      <div class="reserve_label">
+        <%= f.label :end_date , "終了日" %>
+      </div> 
+      <div class="reserve_input">
+        <%= f.date_field :end_date %>
+      </div> 
+      <div class="reserve_label">
+        <%= f.label :number_of_perple , "人数" %>
+      </div> 
+      <div class="reserve_input">
+        <%= f.text_field :number_of_perple %>
+      </div> 
+      <%= f.hidden_field :room_id , :value => @room.id %>
+      <%= f.hidden_field :user_id , :value => session[:user_id] %>
+      <div class="reserve_input">
+        <%= f.submit "予約する" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="show_content">
+  <div class="show_content_name">
+    <%= @room.name %>
+  </div>
+  <div class="show_content_address">
+    <%= @room.address %>
+  </div>
+  <div class="introduction">
+    <%= @room.introduction %>
+  </div>
+</div>

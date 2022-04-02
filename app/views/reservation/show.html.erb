@@ -1,0 +1,26 @@
+<div class="flash_notice">
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+</div>
+<div class="reservation_show_container">
+  <div class="reservation_show_form">
+    <div class="reservation_show_content">
+      <h4>予約した部屋</h4>
+      <%= @room.name %>
+    </div>
+    <div class="reservation_show_content">
+      <h4>開始日</h4>
+      <%= @reservation.start_date %>
+    </div>
+    <div class="reservation_show_content">
+      <h4>終了日</h4>
+      <%= @reservation.end_date %>
+    </div>
+    <div class="reservation_show_content">
+      <h4>価格</h4>
+      <%= @reservation.total_amount %>
+      <span>円</span>
+    </div>
+  </div>  
+</div>

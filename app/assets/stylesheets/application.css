@@ -44,24 +44,95 @@
    align-items: center;
  }
 
- .header_right{
-   float: right;
-   display: flex;
-   align-items: center;
+ .header_left input[type="submit"]{
+   display: none;
  }
+
+ .login_header_right{
+   margin: 0 0 0 auto;
+   display: flex;
+ }
+
+ .login_header_right a{
+   background-color: #4a90e2;
+   color: white;
+   border-radius: 5px;
+   text-decoration: none;
+   height: 40px;
+   width: 100px;
+   display: flex;
+   flex-direction: row;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   margin-right: 10px;
+ }
+
+.header_right{
+  margin: 10px 100px 0 auto;
+  height: 100px;
+}
 
  .header_right ul{
   background-color: white;
+  display: none;
+  position: absolute;
+  width: auto;
+  margin-top: 10px;
   list-style: none;
+  padding: 10px, 10px;
+  border: 3px solid #F6F8F9;
  }
 
- .header_input{
-   font-family: FontAwesome;
+ .header_right ul li a{
+   text-decoration: none;
+   color: black;
+   padding: 5px 5px;
+   backface-visibility: hidden;
+ }
+
+ .header_right img{
+   height: 70px;
+   width:70px;
+   border-radius: 50px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+ }
+
+ .header_right_name{
+   color: white;
+   text-align: center;
+ }
+
+ .header_left input{
    height: 35px;
-   margin: 0 5px;
+   margin: 0 1px;
    font-size: 16px;
-   padding-left: 10px;
-   font-weight: bold;
+   padding-left: 30px;
+ }
+
+ .font_position{
+  position: relative;
+  display: inline-block;
+ }
+
+ .icon1::before{
+  content:'\f041';
+  font-family: 'FontAwesome';
+  font-size: 1.5em;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+ }
+
+ .icon2::before{
+   content:'\f002';
+   font-family: 'FontAwesome';
+   font-size: 1.5em;
+   position: absolute;
+   top: 7px;
+   left: 10px;
  }
 
  .background_image{
@@ -94,7 +165,6 @@
   width: 100%;
   margin-bottom: 20px;
   height: 35px;
-  color: white;
   border-radius: 5px;
   font-size: 15px;
   padding-left: 10px;
@@ -103,6 +173,7 @@
 
  .top_search input:last-child{
   background-color: #4a90e2;
+  color: white;
   border: none;
  }
 
@@ -144,7 +215,631 @@
    text-align: center;
  }
 
- .sign_in_container{
+ article{
+   display: flex;
+   width: 100%;
+ }
+
+ .tab{
+   float: left;
+   border-right: 3px solid gray;
+   height: 1000px;
+   width: 20%;
+ }
+
+ .tab ul li a{
+   display: block;
+   text-decoration: none;
+   padding: 20px 20px;
+   color: black;
+ }
+ 
+ .tab ul li a:hover{
+   color:#4a90e2;
+  }
+
+  .click{
+    color:#4a90e2;
+   }
+
+ .back_ground{
+   background-color: #F6F8F9;
+   display: inline-block;
+   height: 1000px;
+   width: 80%;
+ }
+
+  .acount{
+    background-color: white;
+    margin: 20px 100px auto 100px;
+    border: 1px solid #eaedef;
+  }
+
+  .acount_content{
+    width:100%;
+    display: flex;
+    padding: 10px;
+    border: 1px solid gray;
+  }
+
+  .acount_content_left{
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .acount_content_right{
+    width: 80%;
+  }
+
+  .acount_content a{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  } 
+  
+  .profile{
+    background-color: white;
+    margin: 20px 100px auto 100px;
+    border: 1px solid #eaedef;
+  }
+
+  .profile_content{
+    width:100%;
+    display: flex;
+    padding: 10px;
+    border: 1px solid gray;
+  }
+
+  .profile_content img{
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    margin-left: 50%;
+  }
+
+  .profile_content_left{
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .profile_content_left span{
+    background-color: #ff0000a8;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 5px;
+    margin-left: 10px;
+  }
+
+  .profile_content_right{
+    width: 80%;
+  }
+
+  .profile_content input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  } 
+
+  .profile_content input[type="text"]{
+    width: 100%;
+    height: 30px;
+  }
+
+  .profile_content textarea{
+    width: 100%;
+    height: 100px;
+  }
+
+  .new_room_form{
+    background-color: #F6F8F9;
+  }
+
+  .new_room_conteiner{
+    background-color: white;
+    margin: 30px 300px;
+    border: 1px solid #eaedef;
+    display: inline-block;
+    width: 55%;
+  }
+
+  .new_room_content{
+    border: 1px solid #eaedef;
+    width:100%;
+    display: flex;
+    padding: 30px 20px;
+  }
+
+  .new_room_content_left{
+    width: 25%;
+  }
+
+  .new_room_content_left span{
+    background-color: #ff0000a8;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+
+  .new_room_content_right{
+    width: 75%;
+  }
+
+  .new_room_content_right input{
+    width:100%;
+    height: 30px;
+  }
+
+  .new_room_content_right textarea{
+    width:100%;
+    height: 100px;
+  }
+
+  .new_room_content input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  } 
+
+  .reservations_container{
+    padding: 30px 50px;
+  }
+
+  .reservations_container table{
+    width: 100%;
+  }
+
+  .reservations_container table th{
+    border-top: 1px solid #eaedef;
+    border-bottom: 1px solid #eaedef;
+    text-align: center;
+    min-width: 150px;
+  }
+
+  .reservations_container table td{
+    min-width: 160px;
+    height: auto;
+    text-align: center;
+  }
+
+  .reservations_container table tr:nth-child(even){
+    background-color: #f9fafb;
+    border-bottom: 1px solid #eaedef;
+  }
+
+  .reservations_container table tr:nth-child(odd){
+    background-color: white;
+    border-bottom: 1px solid #eaedef;
+  }
+
+  .rooms_container{
+    padding: 30px 50px;
+  }
+
+  .rooms_container table{
+    width: 100%;
+  }
+
+  .rooms_container table th{
+    border-top: 1px solid #eaedef;
+    border-bottom: 1px solid #eaedef;
+    text-align: center;
+    min-width: 150px;
+  }
+
+  .rooms_container table tr:nth-child(even){
+    background-color: #F6F8F9;
+  }
+
+  .rooms_container table tr:nth-child(odd){
+    background-color: white;
+  }
+
+  .rooms_container table td{
+    border-bottom: 1px solid #eaedef;
+    min-width: 160px;
+    height: auto;
+    text-align: center;
+  }
+
+  .room_show_top{
+    display: flex;
+    padding: 20px 100px;
+    width: 100%;
+  }
+
+  .reserve{
+    border: 1px solid #eaedef;
+    margin-left: 10%;
+    display: block;
+    padding: 20px 10px;
+    width: 30%;
+  }
+
+  .reserve_label{
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .reserve input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .reserve input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  } 
+
+  .show_content{
+    padding: 30px 100px;
+    width: 60%;
+  }
+
+  .show_content_name{
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .show_content_address{
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  .introduction{
+    border-top: 1px solid #eaedef; 
+    border-bottom: 1px solid #eaedef; 
+    line-height: 30px;
+    padding: 10px 0;
+  }
+
+  .search_container{
+    padding: 30px 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .search_h3{
+    padding: 30px 50px;
+    font-weight: 100;
+    font-size: 25px;
+  }
+
+  .rooms_search{
+    display: flex;
+    border: 1px solid #eaedef; 
+    width: 23%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+  }
+
+  .rooms_search a{
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+
+  .rooms_search a img{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+  }
+
+  .room_search_name{
+    color: grey;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+
+  .room_search_address{
+    font-weight: bold;
+    padding: 5px 10px;
+  }
+
+  .room_search_price{
+    text-align: right;
+    padding: 5px 10px;
+  }
+
+  .user_edit_container{
+    width: 100%;
+  }
+
+  .user_edit_form{
+    margin: 10px 30%;
+    border: 1px solid #eaedef; 
+    text-align: center;
+    padding: 10px 8%;
+  }
+
+  .user_edit_form h3{
+    font-weight: 100;
+    font-size: 30px;
+    margin: 20px 0;
+  }
+
+  .user_edit_content label{
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .user_edit_content input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 30px;
+  }
+
+  .user_edit_form input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  } 
+
+  .user_edit_form a{
+    text-decoration: none;
+    color:  #4a90e2;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 40px;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .new_user_container{
+    width: 100%;
+  }
+
+  .new_user_form{
+    width: 50%;
+    margin: 10px auto;
+    border: 1px solid #eaedef;  
+    text-align: center;
+  }
+
+  .new_user_form p{
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .new_user_form span{
+    background-color: #ff0000a8;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+
+  .new_user_form input{
+    height: 30px;
+    width: 40%;
+  }
+
+  .new_user_content{
+    padding: 5px 0;
+  }
+
+  .new_user_content input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 25%;
+  } 
+
+  .new_user_content a{
+    text-decoration: none;
+    color:  #4a90e2;
+    background-color: white;
+    display: flex;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 40px;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 25%;
+  }  
+
+  .sign_in_container{
    text-align: center;
    display: block;
- }
+   width: 100%;
+  }
+
+  .sign_in_form{
+   border: 1px solid #eaedef;  
+   margin: 10px 30%;
+   padding: 30px 0;
+  }
+
+  .sign_in_container p{
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .sign_in_content{
+    margin: 10px 0;
+  }
+
+  .sign_in_content span{
+    background-color: #ff0000a8;
+    border-radius: 5px;
+    color: white;  
+    font-size: 10px;
+    padding: 5px; 
+  }
+
+  .sign_in_content input{
+    height: 30px;
+    width: 50%;
+    padding: 0 10px;
+  }
+
+  .sign_in_form input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    width: 60%;
+    height: 35px;
+    margin: 15px 0;
+  }
+
+  .sign_in_form a{
+    text-decoration: none;
+    color: #4a90e2;
+  }
+
+  .flash_notice{
+    background-color:lightBlue;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .reservation_new_container{
+    width: 100%;
+  }
+
+  .reservation_new_form{
+    width: 35%;
+    margin: 10px auto;
+    border: 1px solid #eaedef;  
+    padding: 0 10px;
+  }
+
+  .reservation_new_form h3{
+    border-bottom: 1px solid #eaedef;  
+    padding: 10px 0;
+  }
+
+  .reservation_new_form input[type="submit"]{
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;    
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .reservation_new_form a{
+    background-color: grey;
+    color: white;
+    border-radius: 5px;    
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    text-decoration: none;
+    text-align: center;
+    line-height: 35px;
+  }
+
+  .reservation_show_container{
+    width: 100%;
+    background-color: #F6F8F9;
+    padding: 30px 0;
+  }
+
+  .reservation_show_form{
+    border: 1px solid #eaedef;  
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .reservation_show_content{
+    border-bottom: 1px solid #eaedef;  
+    padding: 20px 30px;
+    background-color: white;
+  }
+
+  .reservation_show_content h4{
+    display: inline-block;
+    width: 30%;
+  }
+
+  .error_container{
+    color: red;
+    text-align: center;
+  }
+
+  .error{
+    color: red;
+    text-align: center;
+  }
+
+  .error_container ul li{
+    list-style: none;
+  }
+

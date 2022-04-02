@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+  post "users/update_profile" => "users#update_profile"
+  get "users/acount" => "users#acount"
+  get "users/profile" => "users#profile"
+  get "rooms/search" => "rooms#search"
+  resources :reservation
+  resources :rooms
   resources :users
   root "users#top"
   get "/sign_in_form" => "users#sign_in_form"
