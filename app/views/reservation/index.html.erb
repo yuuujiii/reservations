@@ -13,7 +13,7 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td><%= image_tag reservation.room.image.url , size:"200x100" %></td>
-        <td><%= link_to reservation.room.name, room_path(reservation) %></td>
+        <td><%= link_to reservation.room.name, room_path(reservation.room.id) %></td>
         <td><%= reservation.room.introduction%></td>
         <td>¥<%= reservation.total_amount%></td>
         <td><%= reservation.start_date%></td>

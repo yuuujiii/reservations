@@ -9,10 +9,10 @@
     <%= form_with model:@reservation, url:reservation_index_path, method: :post do |f| %>
       <%= f.label :start_date , "開始日" %>
       <%= @reservation.start_date %>
-      <%= f.hidden_field :start_date %>
+      <%= f.hidden_field :start_date, min: Date.current %>
       <%= f.label :end_date , "終了日" %>
       <%= @reservation.end_date %>
-      <%= f.hidden_field :end_date %>
+      <%= f.hidden_field :end_date, min: Date.current %>
       <p>使用日数:<%= @days %>日</p>
       <p>人数:<%= @reservation.number_of_perple %>人</p>
       <%= f.hidden_field :number_of_perple %>
